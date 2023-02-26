@@ -20,10 +20,22 @@
           </li>
         </ul>
       </nav>
-      <select name="form[]" class="header__select">
-        <option value="1" selected="selected">RU</option>
-        <option value="2">EN</option>
-      </select>
+      <div class="dropdown">
+        <div class="dropdown-top">
+          <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            RU
+          </button>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.99984 5.9502C4.9165 5.9502 4.74984 5.85859 4.6665 5.76699L0.166504 0.820424C-0.000162762 0.637218 -0.000162762 0.270806 0.166504 0.0875999C0.333171 -0.0956062 0.666504 -0.0956062 0.833171 0.0875999L4.99984 4.75936L9.24984 0.0875999C9.4165 -0.0956062 9.74984 -0.0956062 9.9165 0.0875999C10.0832 0.270806 10.0832 0.637218 9.9165 0.820424L5.33317 5.85859C5.24984 5.9502 5.08317 5.9502 4.99984 5.9502Z" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#" data-value="RU">RU</a>
+          <a class="dropdown-item" href="#" data-value="EN">EN</a>
+          <a class="dropdown-item" href="#" data-value="UA">UA</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </header>

@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 *,
@@ -14,19 +15,30 @@ html {
   color: #fff;
 }
 
-
 .page {
   height: 100%;
   font-family: var(--font-family, sans-serif);
-  font-size: 62.5%;
+  font-size: 50%;
   -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 640px) {
+  .page {
+    font-size: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    font-size: 62.5%;
+  }
 }
 
 .page__body {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.45;
   color: #ffffff;
   background: var(--hero-bg);
@@ -80,6 +92,9 @@ a svg path {
   margin: 0;
   padding: 0;
 }
+button {
+  cursor: pointer;
+}
 
 .input-reset {
   -webkit-appearance: none;
@@ -96,7 +111,8 @@ a svg path {
   }
 }
 input,
-textarea {
+textarea,
+select {
   outline: none;
   &::placeholder {
     color: #666;
@@ -134,20 +150,6 @@ textarea:required:valid {
   padding-top: 12.3rem;
   padding-bottom: 6rem;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    width: 967px;
-    height: 727px;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(91.47deg, #00AB6F 1.25%, #006BCB 111.79%);
-    opacity: 0.6;
-    filter: blur(125px);
-    z-index: -1;
-  }
-
   &-top {
     position: relative;
     margin: 0 auto;
@@ -169,38 +171,6 @@ textarea:required:valid {
     text-align: center;
   }
 
-  &-link {
-    display: flex;
-    align-items: center;
-    gap: $gap;
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--light-color);
-
-    @include hover {
-      color: var(--hover-color);
-    }
-
-    &:hover svg path {
-      stroke: var(--hover-color);
-    }
-
-    &:active,
-    &.active {
-      color: var(--accent-device-color);
-    }
-    &:active svg path,
-    &.active svg path {
-      stroke: var(--accent-device-color);
-    }
-  }
-}
-
-.back-link {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
 }
 
 .btn {
@@ -224,20 +194,5 @@ textarea:required:valid {
   &:active,
   &.active {
     background: var(--btn-active-bg);
-  }
-}
-
-.main-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-
-  &__link {
-    color: var(--light-color);
-    font-size: 2rem;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }

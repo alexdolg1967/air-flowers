@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 4rem;
     color: var(--light-color);
   }
   & .logo {
@@ -23,19 +24,6 @@
 
     @include hover {
       color: var(--hover-color);
-    }
-    &:hover svg path {
-      fill: var(--hover-color);
-    }
-
-    &:active,
-    &.active {
-      color: var(--accent-color);
-    }
-
-    &:active svg path,
-    &.active svg path {
-      fill: var(--accent-color);
     }
 
   }

@@ -43,8 +43,29 @@ if (isMobile.any()) {
   document.querySelector("html").classList.add("_touch");
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownMenu = document.querySelector(".dropdown-menu");
+  const dropdownTop = document.querySelector(".dropdown-top");
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
 
-})
+  dropdownTop.addEventListener('click', () => {
+    dropdownToggle.classList.toggle('toggle-active');
+    dropdownTop.classList.toggle('top-active');
+    dropdownMenu.classList.toggle('dropdown-active');
+  })
 
+  dropdownMenu.addEventListener("click", (event) => {
+    const target = event.target;
+    const selectedValue = target.getAttribute("data-value");
+    const selectedText = target.textContent;
 
+    dropdownToggle.textContent = selectedText;
+    dropdownMenu.classList.remove('dropdown-active');
+    dropdownTop.classList.remove('top-active');
+    dropdownToggle.classList.remove('toggle-active');
+
+    console.log(
+      `Выбрана опция "${selectedText}" с значением "${selectedValue}"`
+    );
+  });
+});

@@ -1,0 +1,45 @@
+// === footer ===
+.footer {
+  background-color: var(--footer-bg);
+  // .footer__container
+  &__container {
+  }
+  &__body {
+    padding: 1.9rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--light-color);
+  }
+  & .logo {
+    letter-spacing: 0.05em;
+  }
+  & a {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+    color: var(--light-color);
+
+    @include hover {
+      color: var(--hover-color);
+    }
+    &:hover svg path {
+      fill: var(--hover-color);
+    }
+
+    &:active,
+    &.active {
+      color: var(--accent-color);
+    }
+
+    &:active svg path,
+    &.active svg path {
+      fill: var(--accent-color);
+    }
+
+  }
+}
+
+
+

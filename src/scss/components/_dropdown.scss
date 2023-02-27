@@ -8,7 +8,7 @@
     cursor: pointer;
 
     & svg {
-      transition: 0.3s;
+      transition: 0.2s;
     }
 
     &.top-active svg {
@@ -27,12 +27,17 @@
 
   &-menu {
     position: absolute;
-    display: none;
     top: calc(100% - 1px);
     left: 0;
     width: 46px;
+    display: flex;
+    flex-direction: column;
     border: 1px solid #80828D;
     background: var(--header-bg);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.2s;
+
 
     & .dropdown-item {
       padding-block: .5rem;
@@ -45,8 +50,7 @@
     }
 
     &.dropdown-active {
-      display: flex;
-      flex-direction: column;
+      transform: scaleY(1);
     }
   }
 }

@@ -52,6 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownToggle.classList.toggle('toggle-active');
     dropdownTop.classList.toggle('top-active');
     dropdownMenu.classList.toggle('dropdown-active');
+
+    // закрытие выпадашки по щелчку вне
+    if (dropdownMenu.classList.contains('dropdown-active')) {
+      document.addEventListener('click', (e) => {
+        if ((!e.target.parentElement.classList.contains('dropdown-menu')) && (!e.target.parentElement.classList.contains('dropdown-top')) ) {
+          dropdownMenu.classList.remove('dropdown-active');
+          dropdownTop.classList.remove('top-active');
+          dropdownToggle.classList.remove('toggle-active');
+        }
+      })
+    }
   })
 
   dropdownMenu.addEventListener("click", (event) => {
@@ -63,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownMenu.classList.remove('dropdown-active');
     dropdownTop.classList.remove('top-active');
     dropdownToggle.classList.remove('toggle-active');
-
-    console.log(
-      `Выбрана опция "${selectedText}" с значением "${selectedValue}"`
-    );
   });
+
+
 });

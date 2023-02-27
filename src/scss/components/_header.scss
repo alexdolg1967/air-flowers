@@ -20,20 +20,18 @@
     margin-right: auto;
     font-size: 0;
   }
-  & .nav__list {}
-}
-
-.nav {
-  &__list {
-    display: flex;
-    align-items: center;
-    gap: 6rem;
+  & .nav__link:hover,
+  & .nav__item.active .nav__link {
+    color: var(--link-active-color);
   }
-  &__link {
-    padding-block: .5rem;
-    font-size: 1.2rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--light-color);
+  & .nav__item.active:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 1px;
+    height: 16px;
+    background: var(--link-active-color);
+    transform: translateX(-50%);
   }
 }

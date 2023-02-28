@@ -1,0 +1,31 @@
+.hero {
+  position: relative;
+
+  &__shape {
+    .shape__item:nth-child(1),
+    .shape__item:nth-child(2),
+    .shape__item:nth-child(3),
+    .shape__item:nth-child(4),
+    .shape__item:nth-child(5),
+    .shape__item:nth-child(6) {
+      border-bottom: 1px solid rgba(255,255,255,0.07)
+    }
+    .shape__item:nth-child(7) {
+      border-left: 0;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto repeat(4, 414px) auto;
+    grid-template-rows: repeat(2, 439px);
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
